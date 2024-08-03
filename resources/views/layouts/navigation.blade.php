@@ -38,13 +38,13 @@
                             {{ __('Profile') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('orders.index')">
-                            {{ __('Orders') }}
+                            {{ __('Order') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('menus.index')">
                             {{ __('Menus') }}
                         </x-dropdown-link>
                         <x-dropdown-link :href="route('merchant.edit')">
-                            {{ __('Menchant') }}
+                            {{ __('Merchant Katering') }}
                         </x-dropdown-link>
 
                         <!-- Authentication -->
@@ -79,25 +79,29 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
-                {{ __('Orders') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('menus.index')" :active="request()->routeIs('menus.index')">
-                {{ __('Menus') }}
-            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
-            <div class="px-4">
+            <div class="px-4 bg-gray-300">
                 <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
                 <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
             </div>
+            <hr>
 
             <div class="mt-3 space-y-1">
                 <x-responsive-nav-link :href="route('profile.edit')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
+                <x-dropdown-link :href="route('orders.index')">
+                            {{ __('Order') }}
+                </x-dropdown-link>
+                <x-dropdown-link :href="route('menus.index')">
+                    {{ __('Menus') }}
+                </x-dropdown-link>
+                <x-dropdown-link :href="route('merchant.edit')">
+                    {{ __('Merchant Katering') }}
+                </x-dropdown-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
@@ -112,4 +116,4 @@
             </div>
         </div>
     </div>
-</div>
+</nav>
